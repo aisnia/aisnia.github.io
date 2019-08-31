@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>正则表达式 | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">正则表达式</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">正则表达式</h1><div class="post-meta"><a href="/blog/2019/08/31/正则表达式/#comments" class="comment-count"></a><p><span class="date">Aug 31, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><strong>正则表达式</strong></h2><p>正则表达式就是以某种方式来描述字符串</p>
+<p>可以用来匹配字符串来找到你需要的</p>
+<p>String类的分隔<strong>split</strong> 和 <strong>replace</strong>方法可以放入正则表达式的参数</p>
+<p><strong>matches</strong> 匹配正则表达式的方法</p>
+<h2 id="符号定义"><a href="#符号定义" class="headerlink" title="符号定义"></a><strong>符号定义</strong></h2><h4 id="基本书写符号"><a href="#基本书写符号" class="headerlink" title="基本书写符号"></a><strong>基本书写符号</strong></h4><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>符号</th>
+<th>示例</th>
+<th>解释</th>
+<th>匹配输入</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\</td>
+<td>转义符</td>
+<td>*</td>
+<td>符号“*”</td>
+<td>*</td>
+</tr>
+<tr>
+<td>[  ]</td>
+<td>可接收的字符列表</td>
+<td>[efgh]</td>
+<td>e、f、g、h中的任意1个字符</td>
+<td>e、f、g、h</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td>不接收的字符列表</td>
+<td>[^abc]</td>
+<td>除a、b、c之外的任意1个字符，包括数字和特殊符号</td>
+<td>m、q、5、*</td>
+</tr>
+<tr>
+<td>|</td>
+<td>匹配“|”之前或之后的表达式</td>
+<td>ab|cd</td>
+<td>ab或者cd</td>
+<td>ab、cd</td>
+</tr>
+<tr>
+<td>(  )</td>
+<td>将子表达式分组</td>
+<td>(abc)</td>
+<td>将字符串abc作为一组</td>
+<td>abc</td>
+</tr>
+<tr>
+<td>-</td>
+<td>连字符</td>
+<td>A-Z</td>
+<td>任意单个大写字母</td>
+<td>大写字母</td>
+</tr>
+</tbody></table>
+<h3 id="限定符"><a href="#限定符" class="headerlink" title="限定符"></a><strong>限定符</strong></h3><p>限定符将可选数量的数据添加到正则表达式，下表为常用限定符：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+<th>示例</th>
+<th>匹配输入</th>
+<th>不匹配输入</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>指定字符重复0次或n次</td>
+<td>(abc)*</td>
+<td>仅包含任意个abc的字符串，等效于\w*</td>
+<td>abc、abcabcabc</td>
+<td>a、abca</td>
+</tr>
+<tr>
+<td>+</td>
+<td>指定字符重复1次或n次</td>
+<td>m+(abc)*</td>
+<td>以至少1个m开头，后接任意个abc的字符串</td>
+<td>m、mabc、mabcabc</td>
+<td>ma、abc</td>
+</tr>
+<tr>
+<td>?</td>
+<td>指定字符重复0次或1次</td>
+<td>m+abc?</td>
+<td>以至少1个m开头，后接ab或abc的字符串</td>
+<td>mab、mabc、mmmab、mmabc</td>
+<td>ab、abc、mabcc</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>只能输入n个字符</td>
+<td>[abcd]{3}</td>
+<td>由abcd中字母组成的任意长度为3的字符串</td>
+<td>abc、dbc、adc</td>
+<td>a、aa、dcbd</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>指定至少 n 个匹配</td>
+<td>[abcd]{3,}</td>
+<td>由abcd中字母组成的任意长度不小于3的字符串</td>
+<td>aab、dbc、aaabdc</td>
+<td>a、cd、bb</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>指定至少 n 个但不多于 m 个匹配</td>
+<td>[abcd]{3,5}</td>
+<td>由abcd中字母组成的任意长度不小于3，不大于5的字符串</td>
+<td>abc、abcd、aaaaa、bcdab</td>
+<td>ab、ababab、a</td>
+</tr>
+<tr>
+<td>^</td>
+<td>指定起始字符</td>
+<td>^[0-9]+[a-z]*</td>
+<td>以至少1个数字开头，后接任意个小写字母的字符串</td>
+<td>123、6aa、555edf</td>
+<td>abc、aaa、a33</td>
+</tr>
+<tr>
+<td>$</td>
+<td>指定结束字符</td>
+<td>^[0-9]-[a-z]+$</td>
+<td>以1个数字开头后接连字符“–”，并以至少1个小写字母结尾的字符串</td>
+<td>2-a、3-ddd、5-efg</td>
+<td>33a、8-、7-Ab</td>
+</tr>
+</tbody></table>
+<h3 id="匹配字符集"><a href="#匹配字符集" class="headerlink" title="匹配字符集"></a><strong>匹配字符集</strong></h3><p>匹配字符集是预定义的用于正则表达式中的符号集。如果字符串与字符集中的任何一个字符相匹配，它就会找到这个匹配项。</p>
+<p>正则表达式中的部分匹配字符集:</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+<th>示例</th>
+<th>匹配输入</th>
+<th>不匹配输入</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>匹配除 \n 以外的任何字符</td>
+<td>a..b</td>
+<td>以a开头，b结尾，中间包括2个任意字符的长度为4的字符串</td>
+<td>aaab、aefb、a35b、a#*b</td>
+<td>ab、aaaa、a347b</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配单个数字字符，相当于[0-9]</td>
+<td>\d{3}(\d)?</td>
+<td>包含3个或4个数字的字符串</td>
+<td>123、9876</td>
+<td>123、9876</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配单个非数字字符，相当于[^0-9]</td>
+<td>\D(\d)*</td>
+<td>以单个非数字字符开头，后接任意个数字字符串</td>
+<td>a、A342</td>
+<td>aa、AA78、1234</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配单个数字、大小写字母字符，相当于[0-9a-zA-Z]</td>
+<td>\d{3}\w{4}</td>
+<td>以3个数字字符开头的长度为7的数字字母字符串</td>
+<td>234abcd、12345Pe</td>
+<td>58a、Ra46</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配单个非数字、大小写字母字符，相当于[^0-9a-zA-Z]</td>
+<td>\W+\d{2}</td>
+<td>以至少1个非数字字母字符开头，2个数字字符结尾的字符串</td>
+<td>#29、#?@10</td>
+<td>23、#?@100</td>
+</tr>
+</tbody></table>
+<h3 id="分组构造"><a href="#分组构造" class="headerlink" title="分组构造"></a><strong>分组构造</strong></h3><p>常用分组构造形式:</p>
+<table>
+<thead>
+<tr>
+<th>常用分组构造形式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>()</td>
+<td>非命名捕获。捕获匹配的子字符串（或非捕获组）。编号为零的第一个捕获是由整个正则表达式模式匹配的文本，其它捕获结果则根据左括号的顺序从1开始自动编号。</td>
+</tr>
+<tr>
+<td>(?<name>)</name></td>
+<td>命名捕获。将匹配的子字符串捕获到一个组名称或编号名称中。用于name的字符串不能包含任何标点符号，并且不能以数字开头。可以使用单引号替代尖括号，例如 (?’name’)</td>
+</tr>
+</tbody></table>
+<h3 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a><strong>字符转义</strong></h3><p>如果你想查找元字符本身的话，比如你查找.,或者<em>,就出现了问题：你没办法指定它们，因为它们会被解释成别的意思。这时你就得使用\来取消这些字符的特殊意义。因此，你应该使用.和\</em>。当然，要查找\本身，你也得用\</p>
+<p>例如：deerchao.net匹配deerchao.NET，C:\Windows匹配C:\Windows。注意在Java中: (<a href="https://github\\.com/[\\w\\-]" target="_blank" rel="noopener">https://github\\.com/[\\w\\-]</a>) 用”\.”配备”.”。</p>
+<p><strong>常用正则表达式举例</strong></p>
+<p>非负整数：“^\d+$ ”</p>
+<p>正整数： “ ^[0-9]<em>[1-9][0-9]</em>$” </p>
+<p>非正整数： “ ^((-\d+)|(0+))$” </p>
+<p>整数： “ ^-?\d+$” </p>
+<p>英文字符串： “ ^[A-Za-z]+$” </p>
+<p>英文字符数字串： “ ^[A-Za-z0-9]+$” </p>
+<p>英数字加下划线串： “^\w+$” </p>
+<p>E-mail地址：“^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$” </p>
+<p>URL：“^[a-zA-Z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(?\s</em>)?$”</p>
+<h3 id="Petteren-和-Matcher"><a href="#Petteren-和-Matcher" class="headerlink" title="Petteren    和    Matcher"></a><strong>Petteren    和    Matcher</strong></h3><p>Pattern类用于创建一个正则表达式,也可以说创建一个匹配模式,它的构造方法是私有的,不可</p>
+<p>以直接创建,但可以通过Pattern.complie(String regex)简单工厂方法创建一个正则表达式, </p>
+<p>CharSequence 接口有 CharBuffer,String,StringBuilder,StringBuffer</p>
+<p><strong>Pattern类详解</strong></p>
+<p>Pattern表示编译后的正则表达式</p>
+<p><strong>Pattern</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. <span class="function"><span class="keyword">static</span> Pattern <span class="title">compile</span><span class="params">(String regex)</span> </span></span><br><span class="line"><span class="function"><span class="comment">//将给定的正则表达式编译并赋予给Pattern类</span></span></span><br><span class="line"><span class="function">2. <span class="keyword">static</span> Pattern <span class="title">compile</span><span class="params">(String regex, <span class="keyword">int</span> flags)</span> </span></span><br><span class="line"><span class="function"><span class="comment">//同上，但增加flag参数的指定，可选的flag参数包括：CASE INSENSITIVE,MULTILINE,DOTALL,UNICODE CASE， CANON EQ </span></span></span><br><span class="line"><span class="function">3. <span class="keyword">int</span> <span class="title">flags</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"><span class="comment">//返回当前Pattern的匹配flag参数. </span></span></span><br><span class="line"><span class="function">4. String[] <span class="title">split</span><span class="params">(CharSequence input)</span>  分隔字符串 </span></span><br><span class="line"><span class="function"><span class="comment">//快速判断匹配 </span></span></span><br><span class="line"><span class="function">5.Pattern.<span class="title">matcher</span><span class="params">(String regex,CharSequence input)</span></span></span><br><span class="line"><span class="function"><span class="comment">//返回一个Matcher对象</span></span></span><br><span class="line"><span class="function">6.Pattern.<span class="title">matcher</span><span class="params">(CharSequence input)</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Matcher对象</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">matches()</span><br><span class="line">Pattern p=Pattern.compile(<span class="string">"\\d+"</span>); </span><br><span class="line">Matcher m=p.matcher(<span class="string">"22bb23"</span>); </span><br><span class="line">m.matches();<span class="comment">//返回false,因为bb不能被\d+匹配,导致整个字符串匹配未成功. </span></span><br><span class="line">Matcher m2=p.matcher(<span class="string">"2223"</span>); </span><br><span class="line">m2.matches();<span class="comment">//返回true,因为\d+匹配到了整个字符串</span></span><br><span class="line"><span class="number">1</span>. Pattern.matcher(String regex,CharSequence input),它与下面这段代码等价 </span><br><span class="line">Pattern.compile(regex).matcher(input).matches()</span><br><span class="line"><span class="number">2</span>. matches是整个匹配，只有整个字符序列完全匹配成功，</span><br><span class="line">才返回True，否则返回False。但如果前部分匹配成功，将移动下次匹配的位置。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>.lookingAt()</span><br><span class="line">Matcher m=p.matcher(<span class="string">"22bb23"</span>); </span><br><span class="line">m.lookingAt();<span class="comment">//返回true,因为\d+匹配到了前面的22 </span></span><br><span class="line">Matcher m2=p.matcher(<span class="string">"aa2223"</span>); </span><br><span class="line">m2.lookingAt();<span class="comment">//返回false,因为\d+不能匹配前面的aa </span></span><br><span class="line">lookingAt是部分匹配，总是从第一个字符进行匹配,</span><br><span class="line">匹配成功了不再继续匹配，匹配失败了,也不继续匹配。</span><br><span class="line"></span><br><span class="line">Pattern p = Pattern.compile(expression); <span class="comment">// 正则表达式 </span></span><br><span class="line">Matcher m = p.matcher(text); <span class="comment">// 操作的字符串 </span></span><br><span class="line"><span class="keyword">while</span> (m.find()) &#123;</span><br><span class="line">    matcher.start();</span><br><span class="line">    matcher.end();</span><br><span class="line">    matcher.group(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>. find()是部分匹配，从当前位置开始匹配，找到一个匹配的子串，</span><br><span class="line">将移动下次匹配的位置。</span><br><span class="line"><span class="number">2</span>. find()从匹配器区域的开头开始，</span><br><span class="line">如果该方法的前一次调用成功了并且从那时开始匹配器没有被重置，</span><br><span class="line">则从以前匹配操作没有匹配的第一个字符开始。如果匹配成功，</span><br><span class="line">则可以通过 start、end 和 group 方法获取更多信息。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://www.cnblogs.com/ggjucheng/p/3423731.html" target="_blank" rel="noopener">https://www.cnblogs.com/ggjucheng/p/3423731.html</a></p>
+</blockquote>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/08/31/正则表达式/">http://cxqiang.gitee.io/blog/2019/08/31/正则表达式/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/Java基础/">Java基础</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/08/31/Arrays/" class="pre">Arrays</a><a href="/blog/2019/08/31/泛型/" class="next">泛型</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式"><span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#符号定义"><span class="toc-text">符号定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本书写符号"><span class="toc-text">基本书写符号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限定符"><span class="toc-text">限定符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配字符集"><span class="toc-text">匹配字符集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组构造"><span class="toc-text">分组构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符转义"><span class="toc-text">字符转义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Petteren-和-Matcher"><span class="toc-text">Petteren    和    Matcher</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/System/">System</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Random/">Random</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Date/">Date</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Collections/">Collections</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Arrays/">Arrays</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/泛型/">泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/异常/">异常</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/30/内部类/">内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/29/面向对象与面向过程/">面向对象与面向过程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/面对对象/" style="font-size: 15px;">面对对象</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

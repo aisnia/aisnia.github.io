@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title> | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">陌染殇雪</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title"></h1><div class="post-meta"><a href="/blog/2019/08/31/System/#comments" class="comment-count"></a><p><span class="date">Aug 31, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h3 id="一、System类的定义"><a href="#一、System类的定义" class="headerlink" title="一、System类的定义"></a><strong>一、System类的定义</strong></h3><ul>
+<li>System类为Java的系统类，位于 java.lang 包中</li>
+<li>System类的构造方法由 private 进行修饰，因此无法被实例化</li>
+<li>System类提供了标准输入流、标准输出流和错误输出流； </li>
+</ul>
+<p>此外还提供了访问操作系统环境变量，访问虚拟机环境变量，复制数组，垃圾回收等一系列实用方法</p>
+<h3 id="二、System类的常用方法"><a href="#二、System类的常用方法" class="headerlink" title="二、System类的常用方法"></a><strong>二、System类的常用方法</strong></h3><p>  <strong>1、System.currentTimeMillis()</strong></p>
+<ul>
+<li>获取当前时间戳，单位为秒</li>
+</ul>
+<p><strong>2、System.nanoTime()</strong></p>
+<ul>
+<li><p>获取当前时间戳，单位为纳秒</p>
+<p><strong>3、System.lineSeparator()</strong></p>
+</li>
+<li><p>行分隔符，等同于 System.getProperty(“line.separator”)</p>
+<p><strong>4、System.arraycopy()</strong></p>
+</li>
+<li><p>拷贝数组，有五个参数，System.arraycopy(Object src, int srcPos, Object dest, int destPos, int length) </p>
+</li>
+<li><p>src：源数组</p>
+</li>
+<li><p>srcPos：源数组开始截取的位置，从0开始</p>
+</li>
+<li><p>dest：目标数组</p>
+</li>
+<li><p>destPos：目标数组开始拷贝的位置，从0开始</p>
+</li>
+<li><p>length：截取长度</p>
+</li>
+</ul>
+<p><strong>5、System.gc()</strong></p>
+<ul>
+<li>相当于调用了 Runtime.getRuntime().gc()， </li>
+</ul>
+<p>在回收之前会调用对象的finalize()方法，用于负责回收无用对象占据的内存资源</p>
+<ul>
+<li>告诉垃圾收集器准备进行垃圾收集，但垃圾收集器不一定会马上执行， </li>
+</ul>
+<p>这是因为 垃圾回收只与内存有关，根据虚拟机的各种算法来计算得到执行垃圾回收的时间</p>
+<p>  <strong>6、System.runFinalization()</strong></p>
+<ul>
+<li>调用已失去引用的对象的finalize()方法，但不能保证其一定执行</li>
+</ul>
+<p><strong>7、System.load(String filepath)</strong></p>
+<ul>
+<li>用于加载库文件，参数为 库文件的绝对路径</li>
+<li>库文件：动态链接库(ddl)，Dynamic Link Library， </li>
+</ul>
+<p>是一个包含可由多个程序同时使用的代码和数据的库,实现程序模块化</p>
+<p>  <strong>8、System.loadLibrary(String libname)</strong></p>
+<ul>
+<li>用于加载库文件，参数为 库文件名</li>
+<li>该库文件必须在 java.library.path 所指向的路径中</li>
+</ul>
+<p><strong>9、System.mapLibraryName(String libname)</strong></p>
+<ul>
+<li>将库名称映射到特定的字符串中</li>
+</ul>
+<p><strong>10、System.exit(int status)</strong></p>
+<ul>
+<li><p>终止目前正在运行的Java虚拟机</p>
+</li>
+<li><p>参数为0：正常终止</p>
+</li>
+<li><p>参数非0：异常终止</p>
+<p><strong>11、System.getenv()</strong></p>
+</li>
+<li><p>获取操作系统的环境变量（即本地系统中的环境变量）</p>
+</li>
+<li><p>参数为空：获取操作系统的所有环境变量</p>
+</li>
+<li><p>参数不为空：获取操作系统的指定环境变量（例如：参数为“path”）</p>
+<p><strong>12、System.getProperties()</strong></p>
+</li>
+<li><p>获取虚拟机（JVM）的所有环境变量</p>
+<p><strong>13、System.getProperty(String key)</strong></p>
+</li>
+</ul>
+<p>获取虚拟机（JVM）的指定环境变量</p>
+<p>System.getProperty(“java.version”)：获取java运行环境版本</p>
+<p>System.getProperty(“java.vendor”)：获取java运行环境供应商</p>
+<p>System.getProperty(“java.vendor.url”)：获取java运行环境供应商的URL</p>
+<p>System.getProperty(“java.home”)：获取java安装路径</p>
+<p>System.getProperty(“java.vm.specification.version”)：获取java虚拟机规范版本</p>
+<p>System.getProperty(“java.vm.specification.vendor”)：获取java虚拟机规范供应商</p>
+<p>System.getProperty(“java.vm.specification.name”)：获取java虚拟机规范名称</p>
+<p>System.getProperty(“java.vm.version”)：获取java虚拟机实现版本</p>
+<p>System.getProperty(“java.vm.vendor”)：获取java虚拟机实现供应商</p>
+<p>System.getProperty(“java.vm.name”)：获取java虚拟机实现名称</p>
+<p>System.getProperty(“java.specification.version”)：获取java运行时环境规范版本</p>
+<p>System.getProperty(“java.specification.vender”)：获取java运行时环境规范供应商</p>
+<p>System.getProperty(“java.specification.name”)：获取java运行时环境规范名称</p>
+<p>System.getProperty(“java.class.version”)：获取java类格式版本号</p>
+<p>System.getProperty(“jjava.class.path”)：获取java类路径</p>
+<p>System.getProperty(“java.library.path”)：获取加载库时搜索的路径列表</p>
+<p>System.getProperty(“java.io.tmpdir”)：获取默认的临时文件路径</p>
+<p>System.getProperty(“java.ext.dirs”)：获取一个或多个扩展目录的路径</p>
+<p>System.getProperty(“os.name”)：获取操作系统的名称</p>
+<p>System.getProperty(“os.arch”)：获取操作系统的构架</p>
+<p>System.getProperty(“os.version”)：获取操作系统的版本</p>
+<p>System.getProperty(“file.separator”)：获取文件分隔符</p>
+<p>System.getProperty(“path.separator”)：获取路径分隔符</p>
+<p>System.getProperty(“line.separator”)：获取行分隔符</p>
+<p>System.getProperty(“user.name”)：获取用户名称</p>
+<p>System.getProperty(“user.home”)：获取用户主目录</p>
+<p>System.getProperty(“user.dir”)：获取用户当前工作目录</p>
+<p><strong>14、System.setProperties(Properties props)</strong></p>
+<ul>
+<li>设置虚拟机(JVM)的环境变量（批量）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line">prop.setProperty(<span class="string">"aaa"</span>, <span class="string">"bbb"</span>);</span><br><span class="line">System.setProperties(prop);</span><br><span class="line">System.out.println(System.getProperty(<span class="string">"aaa"</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>15、System.setProperty(String key, String value)</strong></p>
+<ul>
+<li>设置虚拟机(JVM)的环境变量（单个）</li>
+</ul>
+<p> <strong>16、System.clearProperty(String key)</strong></p>
+<ul>
+<li>清除设置的虚拟机(JVM)的环境变量</li>
+</ul>
+<p><strong>17、System.console()</strong></p>
+<ul>
+<li>从控制台设备读取字符信息,只能通过命令执行,在IDE中会报错</li>
+</ul>
+<p> <strong>18、System.setIn(InputStream in)</strong></p>
+<ul>
+<li>重新分配标准输入流</li>
+</ul>
+<p><strong>19、System.setErr(PrintStream err)</strong></p>
+<ul>
+<li>重新分配标准错误输出流</li>
+</ul>
+<p>  <strong>20、System.setOut(PrintStream out)</strong></p>
+<ul>
+<li>重新分配标准输出流</li>
+</ul>
+<p><strong>21、err</strong></p>
+<ul>
+<li>标准错误输出流，没有缓存，会立即输出</li>
+</ul>
+<p>  <strong>22、out</strong></p>
+<ul>
+<li><p>标准输出流，有缓存，不一定会立即输出</p>
+<p><strong>23、System.identityHashCode(Object obj)</strong></p>
+</li>
+<li><p>根据对象内存地址来计算得到哈希值</p>
+</li>
+<li><p>注意，这里需要与 hashCode() 方法进行区分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 由于Apple并没有覆盖hashCode()方法，所以两方法得到的哈希值相等</span></span><br><span class="line">Apple apple = <span class="keyword">new</span> Apple();</span><br><span class="line">System.out.println(apple.hashCode()); <span class="comment">// 21685669</span></span><br><span class="line">System.out.println(System.identityHashCode(apple)); <span class="comment">// 21685669</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于String类覆盖了hashCode()方法，所以两方法得到的哈希值不相等</span></span><br><span class="line">String str = <span class="string">"123"</span>;</span><br><span class="line">System.out.println(str.hashCode()); <span class="comment">// 48690</span></span><br><span class="line">System.out.println(System.identityHashCode(str)); <span class="comment">// 21685669</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于"123"会存在常量池中，str1和str2两者指向的是常量池中的同一对象，所以两方法得到的哈希值相等</span></span><br><span class="line">String str1 = <span class="string">"123"</span>;</span><br><span class="line">String str2 = <span class="string">"123"</span>;</span><br><span class="line">System.out.println(System.identityHashCode(str1)); <span class="comment">// 21685669</span></span><br><span class="line">System.out.println(System.identityHashCode(str2)); <span class="comment">// 21685669</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// str1和str2是两个不同对象，所以两方法得到的哈希值不相等</span></span><br><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br><span class="line">System.out.println(System.identityHashCode(str1)); <span class="comment">// 21685669</span></span><br><span class="line">System.out.println(System.identityHashCode(str2)); <span class="comment">// 2133927002</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p> <strong>24、System.setSecurityManager(SecurityManager securityManager)</strong></p>
+<ul>
+<li><p>设置安全管理器，接收一个 SecurityManager 类型的参数</p>
+<p><strong>25、System.getSecurityManager()</strong></p>
+</li>
+<li><p>获取安全管理器</p>
+</li>
+</ul>
+<p><strong>26、System.inheritedChannel()</strong></p>
+<ul>
+<li>返回从创建此Java虚拟机的实体继承得到的channel</li>
+</ul>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/08/31/System/">http://cxqiang.gitee.io/blog/2019/08/31/System/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/08/31/Random/" class="next">Random</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、System类的定义"><span class="toc-text">一、System类的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、System类的常用方法"><span class="toc-text">二、System类的常用方法</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/System/">System</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Random/">Random</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Date/">Date</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Collections/">Collections</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Arrays/">Arrays</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/泛型/">泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/异常/">异常</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/30/内部类/">内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/29/面向对象与面向过程/">面向对象与面向过程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/面对对象/" style="font-size: 15px;">面对对象</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>接口和抽象类 | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">接口和抽象类</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">接口和抽象类</h1><div class="post-meta"><a href="/blog/2019/08/29/接口和抽象类/#comments" class="comment-count"></a><p><span class="date">Aug 29, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h3 id="1：抽象类和抽象方法"><a href="#1：抽象类和抽象方法" class="headerlink" title="1：抽象类和抽象方法"></a><strong>1：抽象类和抽象方法</strong></h3><p>** 抽象类，包含抽象方法的类，在包含抽象方法时，必须在类前面声明为 abstract class**</p>
+<p><strong>抽象类中可以包含普通的方法</strong></p>
+<p><strong>其导出类必须实现抽象方法,否则其导出类 也必须声明为 抽象类</strong></p>
+<p><strong>抽象方法：方法前面声明为 abstract，并且没有方法体</strong></p>
+<p><strong>包含抽象方法的类叫抽象类</strong></p>
+<p><strong>抽象类 可以包含抽象方法和普通方法</strong></p>
+<p><strong>但是普通的类不能包含抽象方法</strong> </p>
+<ul>
+<li><strong>作用：</strong>使类抽象性明确起来，并告诉用户和编译器如何使用它</li>
+</ul>
+<h3 id="2：接口：使抽象的概念更迈进一步"><a href="#2：接口：使抽象的概念更迈进一步" class="headerlink" title="2：接口：使抽象的概念更迈进一步"></a><strong>2：接口：使抽象的概念更迈进一步</strong></h3><p><strong>关键字</strong>：interface</p>
+<ul>
+<li><p>interface不仅仅是一个极度抽象的类，还允许人们通过创建一个能够被向上转型为多种基类的类型，来实现某种类似多继承变种的特性</p>
+</li>
+<li><p>interface这个关键字产生了一个完全抽象的类，只提供了形式而没有任何的实现</p>
+</li>
+<li><p>所有方法必须（自动的）是<strong>public</strong></p>
+</li>
+<li><p>就像类一样 将class 用interface代替 也有访问权限的 public private 包访问</p>
+</li>
+<li><p>在接口中的字段 默认都是并且只能是 public  static final的</p>
+</li>
+<li><p>方法必须是 public 的抽象方法（不能有方法体）</p>
+</li>
+<li><p>接口中不能有 代码块 {}  不管是不是static的</p>
+</li>
+<li><p>接口的实现：implements</p>
+</li>
+</ul>
+<h4 id="抽象类是什么："><a href="#抽象类是什么：" class="headerlink" title="抽象类是什么："></a><strong>抽象类是什么：</strong></h4><p>抽象类不能创建实例，它只能作为父类被继承。抽象类是从多个具体类中抽象出来的父类，它具有更高层次的抽象<strong>。从多个具有相同特征的类中抽象出一个抽象类，以这个抽象类作为其子类的模板，从而避免了子类的随意性。</strong></p>
+<p>(1) 抽象方法只作声明，而不包含实现，可以看成是没有实现体的虚方法</p>
+<p>(2) 抽象类不能被实例化</p>
+<p>(3) 抽象类可以但不是必须有抽象属性和抽象方法，但是一旦有了抽象方法，就一定要把这个类声明为抽象类</p>
+<p>(4) 具体派生类必须覆盖基类的抽象方法</p>
+<p>(5) 抽象派生类可以覆盖基类的抽象方法，也可以不覆盖。如果不覆盖，则其具体派生类必须覆盖它们</p>
+<h4 id="接口是什么："><a href="#接口是什么：" class="headerlink" title="接口是什么："></a><strong>接口是什么：</strong></h4><p>(1) 接口不能被实例化</p>
+<p>(2) 接口只能包含方法声明</p>
+<p>(3) 接口的成员包括方法、属性、索引器、事件</p>
+<p>(4) 接口中不能包含常量、字段(域)、构造函数、析构函数、静态成员</p>
+<h4 id="接口和抽象类的区别："><a href="#接口和抽象类的区别：" class="headerlink" title="接口和抽象类的区别："></a><strong>接口和抽象类的区别：</strong></h4><p>（1）抽象类可以有构造方法，接口中不能有构造方法。</p>
+<p>（2）抽象类中可以有普通成员变量，接口中没有普通成员变量</p>
+<p>（3）抽象类中可以包含静态方法，接口中不能包含静态方法</p>
+<p>（4） 一个类可以实现多个接口，但只能继承一个抽象类。</p>
+<p>（5）接口可以被多重实现，抽象类只能被单一继承</p>
+<p>（6）如果抽象类实现接口，则可以把接口中方法映射到抽象类中作为抽象方法而不必实现，而在抽象类的子类中实现接口中方法</p>
+<h4 id="接口和抽象类的相同点："><a href="#接口和抽象类的相同点：" class="headerlink" title="接口和抽象类的相同点："></a><strong>接口和抽象类的相同点：</strong></h4><p>(1) 都可以被继承</p>
+<p>(2) 都不能被实例化</p>
+<p>(3) 都可以包含方法声明</p>
+<p>(4) 派生类必须实现未实现的方法</p>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/08/29/接口和抽象类/">http://cxqiang.gitee.io/blog/2019/08/29/接口和抽象类/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/面向对象/">面向对象</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/08/29/封装/" class="pre">封装</a><a href="/blog/2019/08/29/类与对象/" class="next">类与对象</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1：抽象类和抽象方法"><span class="toc-text">1：抽象类和抽象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2：接口：使抽象的概念更迈进一步"><span class="toc-text">2：接口：使抽象的概念更迈进一步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象类是什么："><span class="toc-text">抽象类是什么：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口是什么："><span class="toc-text">接口是什么：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口和抽象类的区别："><span class="toc-text">接口和抽象类的区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口和抽象类的相同点："><span class="toc-text">接口和抽象类的相同点：</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/System/">System</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Random/">Random</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Date/">Date</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Collections/">Collections</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/Arrays/">Arrays</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/正则表达式/">正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/泛型/">泛型</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/31/异常/">异常</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/30/内部类/">内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/08/29/面向对象与面向过程/">面向对象与面向过程</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/面对对象/" style="font-size: 15px;">面对对象</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

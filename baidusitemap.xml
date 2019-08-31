@@ -1,6 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/System/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/Random/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/Date/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/Collections/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/Arrays/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/31/%E5%BC%82%E5%B8%B8/</loc>
+    <lastmod>2019-08-31</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/30/%E5%86%85%E9%83%A8%E7%B1%BB/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E5%A4%9A%E6%80%81/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E5%B0%81%E8%A3%85/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%8E%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2019-08-30</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/this_super/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/permission_controller/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/static/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/final/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/visitor/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/template/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/strategy/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/state/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/observer/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/memento/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/mediator/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/iterpreter/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/interpreter/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/command/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/chain_of_responsibility/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/proxy/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/flyweight/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/facade/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/decorator/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/composite/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/bridge/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/adapter/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/builder/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/factory/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/prototype/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/29/singleton/</loc>
+    <lastmod>2019-08-29</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/08/28/markdown-use/</loc>
+    <lastmod>2019-08-28</lastmod>
+  </url>  <url>
     <loc>http://cxqiang.gitee.io/blog/blog/2019/08/27/test/</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>

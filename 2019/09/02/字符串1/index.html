@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>字符串(一) | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">字符串(一)</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">字符串(一)</h1><div class="post-meta"><a href="/blog/2019/09/02/字符串1/#comments" class="comment-count"></a><p><span class="date">Sep 02, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="1：不可变String"><a href="#1：不可变String" class="headerlink" title="1：不可变String"></a><strong>1：不可变String</strong></h2><p>String对象是不可变的：创建后对象不能改变，在jdk中String类中每个看起来会修改String值的方</p>
+<p>法，实际上都是创建了一个全新的 String 对象以及包含修改后的内容，而原来的String丝毫未动</p>
+<h2 id="2：重载-和-StringBuilder"><a href="#2：重载-和-StringBuilder" class="headerlink" title="2：重载 + 和 StringBuilder"></a><strong>2：重载 + 和 StringBuilder</strong></h2><p>你可以对同一个String对象加任意多个别名(引用)String 对象具有只读的特性，指向他的任意引用</p>
+<p>都不可能改变它的值，因此不会对其他引用造成影响</p>
+<p> 在   “+”  String对象时，编译器会调用StringBuilder的append来进行操作，最后返回一个调用</p>
+<p>toStrong()方法返回String对象</p>
+<p>每次  “+”  都会创建个StringBuilder对象，使用当要+ 许多次是可以使用StringBuilder 而不是    </p>
+<p>String，StringBuffer与之差不多，但他是线程安全的，开销较大</p>
+<h3 id="3：无意识的递归"><a href="#3：无意识的递归" class="headerlink" title="3：无意识的递归"></a><strong>3：无意识的递归</strong></h3><p>自动类型转换：当String对象后面跟着一个 “+“，而后面的对象不是String，就会调用后面对象的</p>
+<p>toString方法 ，自动的装换成String类型</p>
+<h3 id="4：String的操作"><a href="#4：String的操作" class="headerlink" title="4：String的操作"></a><strong>4：String的操作</strong></h3><p>​        当改变字符串的内容时，String类方法会返回一个新的String对象，没有变化就返回原来的引用</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数，重载版本</th>
+<th>应用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>构造器</td>
+<td>重载版本：默认版本，String,StringBuilder,StringBuffer,char数组，byte数组</td>
+<td>创建String对象</td>
+</tr>
+<tr>
+<td>length()</td>
+<td></td>
+<td>String中字符的个数</td>
+</tr>
+<tr>
+<td>chatAt()</td>
+<td>Int索引</td>
+<td>取得String中该索引位置上的char</td>
+</tr>
+<tr>
+<td>getChars(),getBytes()</td>
+<td>要复制部分的起点和终点的索引，复制的目标数组，目标数组的起始索引</td>
+<td>复制char或byte到一个目标数组中</td>
+</tr>
+<tr>
+<td>toCharArray()</td>
+<td></td>
+<td>生成一个char[]，包含String 的所有字符</td>
+</tr>
+<tr>
+<td>equals(),equalsIgnoreCase()</td>
+<td>与之进行比较的String</td>
+<td>比较两个String的内容是否相同</td>
+</tr>
+<tr>
+<td><strong>compareTo()</strong></td>
+<td>与之进行比较的String</td>
+<td>按词典顺序比较String的内容，比较结果为负数、零或正数。注意，大小写并不等价</td>
+</tr>
+<tr>
+<td><strong>contains()</strong></td>
+<td>要搜索的CharSequence</td>
+<td>如果该String对象包含参数的内容，则返回true</td>
+</tr>
+<tr>
+<td>contentEquals</td>
+<td>与之进行比较的CharSequence或StringBuffer</td>
+<td>如果该String与参数的内容完全一致，则返回true</td>
+</tr>
+<tr>
+<td>equalsIgnoreCase()</td>
+<td>与之进行比较的String</td>
+<td>忽略大小写，如果两个String的内容相同，则返回true</td>
+</tr>
+<tr>
+<td>regionMatcher()</td>
+<td>该String的索引偏移量，另一个String及其索引偏移量，要比较的长度。重载版本增加了“忽略大小写”功能</td>
+<td>返回boolean结果，以表明所比较区域是否相等</td>
+</tr>
+<tr>
+<td><strong>startsWith()</strong></td>
+<td>可能的起始String，重载版本在参数中增加了偏移量</td>
+<td>返回boolean结果，以表明该String是否以此参数起始</td>
+</tr>
+<tr>
+<td><strong>endsWith()</strong></td>
+<td>该String可能的后缀String</td>
+<td>返回boolean结果，以表明此参数是否该字符串的后缀</td>
+</tr>
+<tr>
+<td><strong>indexOf(),lastIndexOf()</strong></td>
+<td>重载版本包括：char，char与起始索引，String，String与起始索引</td>
+<td>如果该String并不包含此参数，就返回-1；否则返回此参数在String中的起始索引。lastIndexOf()是从后向前搜索</td>
+</tr>
+<tr>
+<td><strong>concat()</strong></td>
+<td>要连接的String</td>
+<td>返回一个新的String对象，内容为原始String连接上参数String</td>
+</tr>
+<tr>
+<td><strong>replace()</strong></td>
+<td>要替换掉的字符，用来进行替换的新字符。也可以用一个charSequence来替换另一个CharSequence</td>
+<td>返回替换字符后的新String对象。如果没有替换发生，则返回原始的String对象</td>
+</tr>
+<tr>
+<td><strong>toLowerCase()toUpperCase()</strong></td>
+<td></td>
+<td>将字符的大小写改变后，返回一个新的String对象。如果没有改变发生，则返回原始的String对象</td>
+</tr>
+<tr>
+<td><strong>trim()</strong></td>
+<td></td>
+<td>将String两端的空白字符删除后，返回一个新的String对象。如果没有改变发生，则返回原始的String对象</td>
+</tr>
+<tr>
+<td><strong>valueOf()</strong></td>
+<td>重载版本：Object;char[],char[],偏移量，与字符个数；boolean;char;int;long;float;double</td>
+<td>返回一个表示参数内容的String</td>
+</tr>
+<tr>
+<td>intern()</td>
+<td></td>
+<td>为每个唯一的字符序列生成一个且仅生成一个String引用</td>
+</tr>
+</tbody></table>
+<h3 id="5：格式化输出"><a href="#5：格式化输出" class="headerlink" title="5：格式化输出"></a>5：格式化输出</h3><p>与c语言的输出类似，System.out.format(“%d”,x);</p>
+<p>%d 整型    %f 浮点型   %c 字符型  %s 字符串  %b Boolean值   %h 散列码    %x 十六进制整数</p>
+<p>%%   字符‘%’</p>
+<h5 id="Formatter类"><a href="#Formatter类" class="headerlink" title="Formatter类"></a>Formatter类</h5><p>构造器参数 是输出流 PrintStream  , OutputStream  ,File</p>
+<p>格式化说明符</p>
+<p>Formatter转换</p>
+<p>如果嫌麻烦的话，可以使用String类的静态方法  String.format()方法 来返回一个 格式化的字符串</p>
+<p>里面调用的页是Formatter对象</p>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/09/02/字符串1/">http://cxqiang.gitee.io/blog/2019/09/02/字符串1/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/字符串/">字符串</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/09/02/字符串2/" class="pre">字符串(二)</a><a href="/blog/2019/09/02/枚举类型/" class="next">枚举类型</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1：不可变String"><span class="toc-text">1：不可变String</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2：重载-和-StringBuilder"><span class="toc-text">2：重载 + 和 StringBuilder</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3：无意识的递归"><span class="toc-text">3：无意识的递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4：String的操作"><span class="toc-text">4：String的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5：格式化输出"><span class="toc-text">5：格式化输出</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Formatter类"><span class="toc-text">Formatter类</span></a></li></ol></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/TreeSet/">TreeSet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/Vector/">Vector</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/HashSet/">HashSet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/TreeMap/">TreeMap</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/ComcurrentHashMap2/">ComcurrentHashMap(JDK8)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/ComcurrentHashMap/">ComcurrentHashMap(JDK1.7)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/LinkedHashMap/">LinkedHashMap</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/03/HashMap2/">HashMap2</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/03/HashMap/">HashMap</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/03/LinkedList/">LinkedList</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/容器/" style="font-size: 15px;">容器</a> <a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/字符串/" style="font-size: 15px;">字符串</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/Java高级/" style="font-size: 15px;">Java高级</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

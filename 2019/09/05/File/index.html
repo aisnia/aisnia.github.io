@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>File | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">File</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">File</h1><div class="post-meta"><a href="/blog/2019/09/05/File/#comments" class="comment-count"></a><p><span class="date">Sep 05, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h2 id="File-类"><a href="#File-类" class="headerlink" title="File 类"></a><strong>File 类</strong></h2><table>
+<thead>
+<tr>
+<th>方法声明</th>
+<th>方法描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>File(String pathname)</td>
+<td>通过指定的一个字符串类型的文件路径来创建一个新的File对象</td>
+</tr>
+<tr>
+<td>File(String parent , String child)</td>
+<td>根据指定的一个字符串类型的父路径和一个字符串类型的子路径（包括文件名称）创建一个File对象</td>
+</tr>
+<tr>
+<td>File(File parent , String child)</td>
+<td>根据指定的 File 类的父路径和字符串类型的子路径包括文件名称）创建一个File对象</td>
+</tr>
+</tbody></table>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a><strong>常用方法</strong></h2><table>
+<thead>
+<tr>
+<th>boolean exists()</th>
+<th>判断File对象对应的文件或者目录是否存在若存在则返回true，否则返回false</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean delete()</td>
+<td>删除File对象对应的文件或者目录若成功则返回true，否则返回false</td>
+</tr>
+<tr>
+<td>boolean createNewFile()</td>
+<td>当File对象对应的文件不存在时，该方法将新建一个此File对象所指定的新文件若创建成功则返回true，否则返回false</td>
+</tr>
+<tr>
+<td>String getName()</td>
+<td>返回File对象表示的文件或文件夹的名称</td>
+</tr>
+<tr>
+<td>String getPath()</td>
+<td>返回File对象对应的路径</td>
+</tr>
+<tr>
+<td>String getAbsolutePath()</td>
+<td>返回File对象对应的绝对路径（在UNIX/Linux等系统上，如果路径是以正斜线 / 开始的，则这个路径是绝对路径；在Windows等系统上，如果路径是从盘符开始的，则这个路径是绝对路径）</td>
+</tr>
+<tr>
+<td>String getParent()</td>
+<td>返回File对象对应目录的父目录，（即返回的目录不包含最后一级子目录）</td>
+</tr>
+<tr>
+<td>boolean canRead()</td>
+<td>判断File对象对应的文件或者目录是否可读若可读则返回true，反之返回false</td>
+</tr>
+<tr>
+<td>boolean canWrite()</td>
+<td>判断File对象对应的文件或者目录是否可写。若可写则返回true，反之返回false</td>
+</tr>
+<tr>
+<td>boolean isFile()</td>
+<td>判断File对象对应的是否是文件（不是目录）若是文件则返回true，反之返回false</td>
+</tr>
+<tr>
+<td>boolean isDirectory()</td>
+<td>判断File对象对应的是否是目录（不是文件）若是目录则返回true，反之返回false</td>
+</tr>
+<tr>
+<td>boolean isAbsolute()</td>
+<td>判断File对象对应的文件或者目录是否是绝对路径</td>
+</tr>
+<tr>
+<td>long lastModified()</td>
+<td>返回1970 年1 月1 日 0 时0 分 0 秒到文件最好修改时间的毫秒值</td>
+</tr>
+<tr>
+<td>long length()</td>
+<td>返回文件内容长度</td>
+</tr>
+<tr>
+<td>String [ ]list()</td>
+<td>返回指定目录的全部内容，只列出名称</td>
+</tr>
+<tr>
+<td>File[ ] listFiles()</td>
+<td>返回一个包含了File对象所有子文件和子目录的File数组</td>
+</tr>
+</tbody></table>
+<h3 id="FileDescriptor-介绍"><a href="#FileDescriptor-介绍" class="headerlink" title="FileDescriptor 介绍"></a><strong>FileDescriptor 介绍</strong></h3><ul>
+<li>FileDescriptor 是“文件描述符”。</li>
+<li>FileDescriptor 可以被用来表示开放文件、开放套接字等。</li>
+<li>以FileDescriptor表示文件来说：当FileDescriptor表示某文件时，我们可以通俗的将FileDescriptor看成是该文件。但是，我们不能直接通过FileDescriptor对该文件进行操作；若需要通过FileDescriptor对该文件进行操作，则需要新创建FileDescriptor对应的FileOutputStream，再对文件进行操作。</li>
+</ul>
+<h2 id="FileInputStream-FileOutputStream"><a href="#FileInputStream-FileOutputStream" class="headerlink" title="FileInputStream/FileOutputStream"></a>FileInputStream/FileOutputStream</h2><blockquote>
+<p>FileInputStream 是文件输入流，它继承于InputStream。将文件输入到 流(内存) 中，</p>
+<p>通常，我们使用FileInputStream从某个文件中获得输入字节。</p>
+<p>FileOutputStream 是文件输出流，它继承于OutputStream。将 流((内存)中的数据， 输出到文件中<br>通常，我们使用FileOutputStream 将数据写入 File 或 FileDescriptor 的输出流。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.xiaoqiang.iostream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> xiaoqiang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/7/22-9:49</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String fromPath = <span class="string">"D:\\idea_workspace\\JavaSE\\src\\com\\xiaoqiang\\iostream\\abc.txt"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String toPath = <span class="string">"D:\\idea_workspace\\JavaSE\\src\\com\\xiaoqiang\\iostream\\123.txt"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//创建文件输入流 输入到流(内存)</span></span><br><span class="line">            FileInputStream file = <span class="keyword">new</span> FileInputStream(fromPath);</span><br><span class="line">            <span class="comment">//创建文件输出流</span></span><br><span class="line">            FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(toPath);</span><br><span class="line">            <span class="comment">//缓冲数组</span></span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">512</span>];</span><br><span class="line">            <span class="keyword">int</span> len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> ((len = file.read(bytes) )!= -<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//读取输入流到  缓冲数组中</span></span><br><span class="line">                file.read(bytes);</span><br><span class="line">                <span class="comment">//将数组中的数据 写入输出流</span></span><br><span class="line">                fileOutputStream.write(bytes,<span class="number">0</span>,bytes.length);</span><br><span class="line">                <span class="comment">//清除缓冲</span></span><br><span class="line">                fileOutputStream.flush();</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            file.close();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/09/05/File/">http://cxqiang.gitee.io/blog/2019/09/05/File/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/IO/">IO</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/09/05/IO概览/" class="pre">IO概览</a><a href="/blog/2019/09/04/TreeSet/" class="next">TreeSet</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#File-类"><span class="toc-text">File 类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FileDescriptor-介绍"><span class="toc-text">FileDescriptor 介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FileInputStream-FileOutputStream"><span class="toc-text">FileInputStream/FileOutputStream</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Selector选择器/">Selector选择器与网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/网络通信/">网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Channel通道/">Channel通道</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Buffer缓冲区/">Buffer缓冲区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/NIO概览/">NIO概览</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/ByteArray/">ByteArray</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/IO概览/">IO概览</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/File/">File</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/TreeSet/">TreeSet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/Vector/">Vector</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/容器/" style="font-size: 15px;">容器</a> <a href="/blog/tags/IO/" style="font-size: 15px;">IO</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/NIO/" style="font-size: 15px;">NIO</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/字符串/" style="font-size: 15px;">字符串</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/Java高级/" style="font-size: 15px;">Java高级</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

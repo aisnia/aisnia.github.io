@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>IO概览 | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">IO概览</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">IO概览</h1><div class="post-meta"><a href="/blog/2019/09/05/IO概览/#comments" class="comment-count"></a><p><span class="date">Sep 05, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h1 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h1><p><img src="D:/Program%20Files%20%28x86%29/youdao/xiaoqiang20000523@163.com/a3fe24566ca64005affa01fed072c244/clipboard.png" alt="img"></p>
+<blockquote>
+<p><strong>区分，</strong></p>
+<p><strong>在javaIO中输入输出的目标是内存，比如</strong></p>
+<p><strong>输入流是，将文件或者其他的数据（输入）存储在流中，即 外界 ==&gt; 程序</strong> </p>
+<p><strong>输出流是将内存的数据输入到文件或其他载体中  程序 ==&gt; 外界</strong></p>
+</blockquote>
+<h3 id="1、InputStream-OutputStream"><a href="#1、InputStream-OutputStream" class="headerlink" title="1、InputStream / OutputStream"></a><strong>1、InputStream / OutputStream</strong></h3><p><strong>IputStream - 用于从源中读取数据，</strong> </p>
+<p>所有有关输入的流都从这继承 （抽象类），提供了输入流所具备的基本方法。因为读取的数据源（构造器中的数据源）不相同，所以产生了很多子类。</p>
+<p><strong>常用方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>public int  available()</th>
+<th>给出可以从此文件输入流中读取的字节数。 返回一个int值。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void close()</td>
+<td>关闭此输入流并释放与流相关联的任何系统资源。</td>
+</tr>
+<tr>
+<td>public int read(int r)</td>
+<td>此方法从InputStream读取指定的数据字节，并返回一个int值。 返回数据的下一个字节，如果它是文件的末尾，则返回-1。</td>
+</tr>
+<tr>
+<td>public int read(byte[] r)</td>
+<td>此方法将输入流中的r.length个字节读入数组。返回读取的总字节数。 如果它到达文件的结尾，则返回-1。</td>
+</tr>
+<tr>
+<td>int read(byte[] b, int off, int len)</td>
+<td>从输入流读取最多 len字节的数据到一个字节数组，从数组off开始写入。</td>
+</tr>
+</tbody></table>
+<p><strong>除了图中的，其他常见的输入流</strong></p>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>功能</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StringBufferInputStream</td>
+<td>String转换为 InputStream</td>
+<td>字符串，底层是StringBuffer</td>
+</tr>
+<tr>
+<td>PipedInputStream</td>
+<td>管道输入流 用来和管道输出流对接，构造器接受一个PipedOutputStream或者同时指定int值为缓冲区的大小。</td>
+<td>典型地使用方法，在一个线程中数据PipedInputStream读入，此数据是由另一个线程写入到对PipedOutputStream中。 单线程下使用可能还会造成死锁。</td>
+</tr>
+<tr>
+<td>SequenceInputStream</td>
+<td>将两个或多个InputStream对象合并成一个</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="2、OutStream-用于将数据写入目标"><a href="#2、OutStream-用于将数据写入目标" class="headerlink" title="2、OutStream  - 用于将数据写入目标"></a><strong>2、OutStream  - 用于将数据写入目标</strong></h3><ol>
+<li>所有有关输出的流都从这继承 （抽象类），提供了输出流所具备的基本方法，flush（）方法 是输出流的标配。</li>
+</ol>
+<p><strong>常用方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>void close()</th>
+<th>关闭此输出流并释放与此流相关联的任何系统资源。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void flush()</td>
+<td>刷新此输出流并强制任何缓冲的输出。</td>
+</tr>
+<tr>
+<td>void write(byte[] b)</td>
+<td>将 b.length字节从指定的字节数组写入此输出流</td>
+</tr>
+<tr>
+<td>void write(byte[] b, int off, int len)</td>
+<td>从指定的字节数组写入 len个字节，从偏移 off开始输出到此输出流。</td>
+</tr>
+</tbody></table>
+<h1 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a><strong>字符流</strong></h1><p>Reader和Writer是所有字符流的抽象类</p>
+<p>常用的有</p>
+<table>
+<thead>
+<tr>
+<th>FIleReader/FileWriter</th>
+<th>文件字符输入输出流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InputStreamReader/OutputStreamWriter</td>
+<td>可将InputStream/OutputStream转换为Reader/Writer</td>
+</tr>
+<tr>
+<td>BufferReader /BufferWriter</td>
+<td>对应字节流的BufferedInoutStream等</td>
+</tr>
+</tbody></table>
+<p>常用方法</p>
+<table>
+<thead>
+<tr>
+<th>read()</th>
+<th>返回一个int性   即ASCII码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>read(char[])</td>
+<td>将字符读取到字符数组里面</td>
+</tr>
+<tr>
+<td>write(int i)</td>
+<td>写字符</td>
+</tr>
+<tr>
+<td>write(char[]，int off ,int len)</td>
+<td>写入字符数组</td>
+</tr>
+<tr>
+<td>write(String s,int off,int len)</td>
+<td>写入字符串</td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/09/05/IO概览/">http://cxqiang.gitee.io/blog/2019/09/05/IO概览/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/IO/">IO</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/09/05/ByteArray/" class="pre">ByteArray</a><a href="/blog/2019/09/05/File/" class="next">File</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#字节流"><span class="toc-text">字节流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、InputStream-OutputStream"><span class="toc-text">1、InputStream / OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、OutStream-用于将数据写入目标"><span class="toc-text">2、OutStream  - 用于将数据写入目标</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#字符流"><span class="toc-text">字符流</span></a></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Selector选择器/">Selector选择器与网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/网络通信/">网络通信</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Channel通道/">Channel通道</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/Buffer缓冲区/">Buffer缓冲区</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/NIO概览/">NIO概览</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/ByteArray/">ByteArray</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/IO概览/">IO概览</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/05/File/">File</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/TreeSet/">TreeSet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/04/Vector/">Vector</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/容器/" style="font-size: 15px;">容器</a> <a href="/blog/tags/IO/" style="font-size: 15px;">IO</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/NIO/" style="font-size: 15px;">NIO</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/字符串/" style="font-size: 15px;">字符串</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/Java高级/" style="font-size: 15px;">Java高级</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

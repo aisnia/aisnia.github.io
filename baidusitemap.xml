@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/Selector%E9%80%89%E6%8B%A9%E5%99%A8/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/Channel%E9%80%9A%E9%81%93/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/Buffer%E7%BC%93%E5%86%B2%E5%8C%BA/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/NIO%E6%A6%82%E8%A7%88/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/File/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/ByteArray/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/05/IO%E6%A6%82%E8%A7%88/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/03/HashMap/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
+    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/03/HashMap2/</loc>
+    <lastmod>2019-09-05</lastmod>
+  </url>  <url>
     <loc>http://cxqiang.gitee.io/blog/blog/2019/09/04/ComcurrentHashMap2/</loc>
     <lastmod>2019-09-04</lastmod>
   </url>  <url>
@@ -21,12 +51,6 @@
   </url>  <url>
     <loc>http://cxqiang.gitee.io/blog/blog/2019/09/04/LinkedHashMap/</loc>
     <lastmod>2019-09-04</lastmod>
-  </url>  <url>
-    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/03/HashMap/</loc>
-    <lastmod>2019-09-03</lastmod>
-  </url>  <url>
-    <loc>http://cxqiang.gitee.io/blog/blog/2019/09/03/HashMap2/</loc>
-    <lastmod>2019-09-03</lastmod>
   </url>  <url>
     <loc>http://cxqiang.gitee.io/blog/blog/2019/09/03/LinkedList/</loc>
     <lastmod>2019-09-03</lastmod>

@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>Request与Response | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Request与Response</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Request与Response</h1><div class="post-meta"><a href="/blog/2019/09/10/Request与Response/#comments" class="comment-count"></a><p><span class="date">Sep 10, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h4 id="服务器处理请求的流程"><a href="#服务器处理请求的流程" class="headerlink" title="服务器处理请求的流程"></a><strong>服务器处理请求的流程</strong></h4><p>  服务器每次收到请求时，都会为这个请求开辟一个新的线程。</p>
+<p>  服务器会把客户端的请求数据封装到request对象中，request就是请求数据的载体！（袋子）</p>
+<p>  服务器还会创建response对象，这个对象与客户端连接在一起，它可以用来向客户端发送响应。</p>
+<h4 id="response：其类型为HttpServletResponse"><a href="#response：其类型为HttpServletResponse" class="headerlink" title="response：其类型为HttpServletResponse"></a><strong>response：其类型为HttpServletResponse</strong></h4><p>  ServletResponse–&gt;与协议无关的类型</p>
+<p>  HttpServletResponse–&gt;与http协议相关的类型</p>
+<p>　　回忆一下http协议！http协议中响应的内容包含哪些东西呢？</p>
+<ul>
+<li><p>状态码：200表示成功、302表示重定向、404表示客户端错（访问的资源不存在）、500表示服务器端错</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    sendError(<span class="keyword">int</span> sc) <span class="comment">// 发送错误状态码，例如404、500</span></span><br><span class="line">    sendError(<span class="keyword">int</span> sc, String msg) <span class="comment">// 也是发送错误状态码，还可以带一个错误信息！</span></span><br><span class="line">setStatus(<span class="keyword">int</span> sc) <span class="comment">// 发送成功的状态码，可以用来发送302</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+<ul>
+<li>响应头：Content-Type、Refresh、Location等等</li>
+</ul>
+<p>　　头就是一个键值对！可能会存在一个头（一个名称，一个值），也可能会存在一个头（一个名称，多个值！）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">setHeader(String name, String value)：<span class="comment">//适用于单值的响应头，例如：response.setHeader("aaa", "AAA");</span></span><br><span class="line">addHeader(String name, String value)：<span class="comment">//适用于多值的响应头</span></span><br><span class="line">response.addHeader(<span class="string">"aaa"</span>, <span class="string">"A"</span>);</span><br><span class="line">response.addHeader(<span class="string">"aaa"</span>, <span class="string">"AA"</span>);</span><br><span class="line">response.addHeader(<span class="string">"aaa"</span>, <span class="string">"AAA"</span>);</span><br><span class="line">setIntHeader(String name, <span class="keyword">int</span> value)：<span class="comment">//适用于单值的int类型的响应头</span></span><br><span class="line">	`	response.setIntHeader(<span class="string">"Content-Length"</span>, <span class="number">888</span>);</span><br><span class="line">addIntHeader(String name, <span class="keyword">int</span> value)：<span class="comment">//适用于多值的int类型的响应头</span></span><br><span class="line">setDateHeader(String name, <span class="keyword">long</span> value)<span class="comment">//：适用于单值的毫秒类型的响应头</span></span><br><span class="line">response.setDateHeader(<span class="string">"expires"</span>, <span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">addDateHeader(String name, <span class="keyword">long</span> value)<span class="comment">//：适用于多值的毫秒类型的响应头</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;meta&gt;标签可以代替响应头：</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>响应体：通常是html、也可以是图片！</p>
+<ul>
+<li><p><strong>response的两个流：</strong></p>
+<ul>
+<li>ServletOutputStream，用来向客户端发送字节数据。</li>
+</ul>
+<p>​        ServletOutputStream out = resopnse.getOutputStream();</p>
+<ul>
+<li>PrintWriter，用来向客户端发送字符数据！需要设置编码。</li>
+</ul>
+<p>PrintWriter writer = response.getWriter();**</p>
+</li>
+<li><p><strong>两个流不能同时使用！</strong></p>
+</li>
+</ul>
+<p>　　　</p>
+<p>　　* 重定向：设置302，设置Location！其中变化的只有Location，所以java提供了一个快捷方法，完成重定向！</p>
+<p>　　　&gt; sendRedirect(String location)方法</p>
+<h2 id="request-–-gt-封装了客户端所有的请求数据！"><a href="#request-–-gt-封装了客户端所有的请求数据！" class="headerlink" title="request –&gt; 封装了客户端所有的请求数据！"></a><strong>request –&gt; 封装了客户端所有的请求数据！</strong></h2><p>请求行</p>
+<p>请求头</p>
+<p>空行</p>
+<p>请求体（GET没体）</p>
+<p>​    回忆一下http协议！请求协议中的数据都可以通过request对象来获取！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">获取常用信息</span><br><span class="line">获取客户端IP，案例：封IP。request.getRemoteAddr()</span><br><span class="line">请求方式，request.getMethod()，可能是POST也可能是GET</span><br><span class="line">获取HTTP请求头</span><br><span class="line"><span class="function">String <span class="title">getHeader</span><span class="params">(String name)</span>，适用于单值头</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getIntHeader</span><span class="params">(String name)</span>，适用于单值<span class="keyword">int</span>类型的请求头</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">getDateHeader</span><span class="params">(String name)</span>，适用于单值毫秒类型的请求头</span></span><br><span class="line"><span class="function">Enumeration&lt;String&gt; <span class="title">getHeaders</span><span class="params">(String name)</span>，适用于多值请求头</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取请求URL"><a href="#获取请求URL" class="headerlink" title="获取请求URL"></a>获取请求URL</h3><p><a href="http://localhost:8080/day10_2/AServlet?username=xxx&amp;password=yyy" target="_blank" rel="noopener">http://localhost:8080/day10_2/AServlet?username=xxx&amp;password=yyy</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function">String <span class="title">getScheme</span><span class="params">()</span>：获取协议，http</span></span><br><span class="line"><span class="function">&gt; String <span class="title">getServerName</span><span class="params">()</span>：获取服务器名，localhost</span></span><br><span class="line"><span class="function">&gt; String <span class="title">getServerPort</span><span class="params">()</span>：获取服务器端口，8080</span></span><br><span class="line"><span class="function">&gt; *****String <span class="title">getContextPath</span><span class="params">()</span>：获取项目名，/day10_2</span></span><br><span class="line"><span class="function">&gt; String <span class="title">getServletPath</span><span class="params">()</span>：获取Servlet路径，/AServlet</span></span><br><span class="line"><span class="function">&gt; String <span class="title">getQueryString</span><span class="params">()</span>：</span></span><br><span class="line"><span class="function">获取参数部分，即问号后面的部分。username</span>=xxx&amp;password=yyy</span><br><span class="line">&gt; <span class="function">String <span class="title">getRequestURI</span><span class="params">()</span>：</span></span><br><span class="line"><span class="function">获取请求URI，等于项目名+Servlet路径。/day10_2/AServlet</span></span><br><span class="line"><span class="function">&gt; String <span class="title">getRequestURL</span><span class="params">()</span>：</span></span><br><span class="line"><span class="function">获取请求URL，等于不包含参数的整个请求路径。</span></span><br><span class="line"><span class="function">http:<span class="comment">//localhost:8080/day10_2/AServlet</span></span></span><br></pre></td></tr></table></figure>
+
+<p>　获取请求参数：请求参数是由客户端发送给服务器的！有可能是在请求体中（POST），也可能是在URL之后（GET）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请求参数：有一个参数一个值的，还有一个参数多个值！</span><br><span class="line"><span class="function">String <span class="title">getParameter</span><span class="params">(String name)</span>：获取指定名称的请求参数值，适用于单值请求参数</span></span><br><span class="line"><span class="function">String[] <span class="title">getParameterValues</span><span class="params">(String name)</span>：获取指定名称的请求参数值，适用于多值请求参数</span></span><br><span class="line"><span class="function">Enumeration&lt;String&gt; <span class="title">getParameterNames</span><span class="params">()</span>：获取所有请求参数名称</span></span><br><span class="line"><span class="function">Map&lt;String,String[]&gt; <span class="title">getParameterMap</span><span class="params">()</span>：获取所有请求参数，其中key为参数名，value为参数值。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="请求转发和请求包含"><a href="#请求转发和请求包含" class="headerlink" title="请求转发和请求包含"></a><strong>请求转发和请求包含</strong></h3><p>　　　　RequestDispatcher rd = request.getRequestDispatcher(“/MyServlet”);  使用request获取RequestDispatcher对象，方法的参数是被转发或包含的Servlet的Servlet路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请求转发：rd.forward(request,response);</span><br><span class="line">请求包含：rd.include(request,response);</span><br></pre></td></tr></table></figure>
+
+<p>　有时一个请求需要多个Servlet协作才能完成，所以需要在一个Servlet跳到另一个Servlet！</p>
+<p>　　　　&gt; 一个请求跨多个Servlet，需要使用转发和包含。</p>
+<p>　　　　&gt; 请求转发：由下一个Servlet完成响应体！当前Servlet可以设置响应头！（留头不留体）</p>
+<p>　　　　&gt; 请求包含：由两个Servlet共同未完成响应体！（都留）</p>
+<p>　　　　&gt; 无论是请求转发还是请求包含，都在一个请求范围内！使用同一个request和response！</p>
+<h3 id="request域"><a href="#request域" class="headerlink" title="request域"></a><strong>request域</strong></h3><p>　　　　<strong>Servlet中三大域对象：request、session、application，都有如下三个方法：</strong></p>
+<p>　　　　&gt; void setAttribute(String name, Object value)</p>
+<p>　　　　&gt; Object getAttribute(String name)</p>
+<p>​    &gt; void removeAttribute(String name);</p>
+<p>　　　　&gt; 同一请求范围内使用request.setAttribute()、request.getAttribute()来传值！前一个Servlet调用setAttribute()保存值，后一个Servlet调用getAttribute()获取值。</p>
+<p>　　<strong>* 请求转发和重定向的区别</strong></p>
+<p>　　　　&gt; 请求转发是一个请求一次响应，而重定向是两次请求两次响应</p>
+<p>　　　　&gt; 请求转发地址栏不变化，而重定向会显示后一个请求的地址</p>
+<p>　　　　&gt; 请求转发只能转发到本项目其他Servlet，而重定向不只能重定向到本项目的其他Servlet，还能定向到其他项目</p>
+<p>　　　　&gt; 请求转发是服务器端行为，只需给出转发的Servlet路径，而重定向需要给出requestURI，即包含项目名！</p>
+<p>　　　　&gt; 请求转发和重定向效率是转发高！因为是一个请求！s</p>
+<p>　　　　　　&lt;&gt; 需要地址栏发生变化，那么必须使用重定向！</p>
+<p>　　　　　　&lt;&gt; 需要在下一个Servlet中获取request域中的数据，必须要使用转发！</p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a><strong>编码</strong></h2><p>　　常见字符编码：<strong>iso-8859-1(不支持中文)</strong>、gb2312、<strong>gbk</strong>、gb18030(系统默认编码，中国的国标码)、<strong>utf-8(万国码，支持全世界的编码，所以我们使用这个)</strong></p>
+<p><strong>1. 响应编码</strong></p>
+<p>　　* 当使用response.getWriter()来向客户端发送字符数据时，如果在之前没有设置编码，那么默认使用iso，因为iso不支持中文，一定乱码</p>
+<p>　　* 在使用response.getWriter()之前可以使用response.setCharaceterEncoding()来设置字符流的编码为gbk或utf-8，当然我们通常会选择utf-8。这样使用response.getWriter()发送的字符就是使用utf-8编码的。但还是会出现乱码！因为浏览器并不知道服务器发送过来的是什么编码的数据！这时浏览器会使用gbk来解码，所以乱码！</p>
+<p>　　* 在使用response.getWriter()之前可以使用response.setHeader(“Content-type”,”text/html;charset=utf-8”)来设置响应头，通知浏览器服务器这边使用的是utf-8编码，而且在调用setHeader()后，还会自动执行setCharacterEncding()方法。这样浏览器会使用utf-8解码，所以就不会乱码了！</p>
+<p>　　* setHeader(“Content-Type”, “text/html;charset=utf-8”)的快捷方法是：setContentType(“text/html;charset=utf-8)。</p>
+<p><strong>2. 请求编码</strong></p>
+<p>　　* 客户端发送给服务器的请求参数是什么编码：</p>
+<p>　　　　客户端首先要打开一个页面，然后在页面中提交表单或点击超链接！在请求这个页面时，服务器响应的编码是什么，那么客户端发送请求时的编码就是什么。</p>
+<p>　　<strong>* 服务器端默认使用什么编码来解码参数：</strong></p>
+<p>　　　　服务器端默认使用ISO-8859-1来解码！所以这一定会出现乱码的！因为iso不支持中文！</p>
+<p>　　* 请求编码处理分为两种：GET和POST：GET请求参数不在请求体中，而POST请求参数在请求体中，所以它们的处理方式是不同的！</p>
+<p>　　<strong>* GET请求编码处理：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; String username = <span class="keyword">new</span> String(request.getParameter(<span class="string">"iso-8859-1"</span>), <span class="string">"utf-8"</span>);</span><br><span class="line">&gt; 在server.xml中配置URIEncoding=utf-<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>　　<strong>* POST请求编码处理：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;String username = <span class="keyword">new</span> String(request.getParameter(<span class="string">"iso-8859-1"</span>), <span class="string">"utf-8"</span>);</span><br><span class="line">&gt; 在获取参数之前调用request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. URL编码</strong></p>
+<p>　　表单的类型：Content-Type: application/x-www-form-urlencoded，就是把中文转换成%后面跟随两位的16进制。</p>
+<p>　　<strong>为什么要用它：在客户端和服务器之间传递中文时需要把它转换成网络适合的方式。</strong></p>
+<p>　　<strong>* 它不是字符编码！</strong></p>
+<p>　　<strong>* 它是用来在客户端与服务器之间传递参数用的一种方式！</strong></p>
+<p>　　<strong>* URL编码需要先指定一种字符编码，把字符串解码后，得到byte[]，然后把小于0的字节+256，再转换成16进制。前面再添加一个%。</strong></p>
+<p>　　* POST请求默认就使用URL编码！tomcat会自动使用URL解码！</p>
+<p>　　* URL编码：String username = URLEncoder.encode(username, “utf-8”);</p>
+<p>　　* URL解码：String username = URLDecoder.decode(username, “utf-8”);</p>
+<p>　　最后我们需要把链接中的中文参数，使用url来编码！今天不行，因为html中不能给出java代码，但后面学了jsp就可以了。</p>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a><strong>路径</strong></h3><p>　　<strong>web.xml中<url-pattern>路径，（叫它Servlet路径！）</url-pattern></strong></p>
+<p>　　　　要么以“*”开关，要么为“/”开头</p>
+<p>　　<strong>转发和包含路径</strong></p>
+<ul>
+<li><p><strong>以“/”开头相对当前项目路径</strong>，例如：<a href="http://localhost:8080/项目名/" target="_blank" rel="noopener">http://localhost:8080/项目名/</a>　request.getRequestdispacher(“/BServlet”).for…();</p>
+</li>
+<li><p>不以“/”开头：相对当前Servlet路径**。 request.getRequestdispacher(“/BServlet”).for…();，</p>
+<p>假如当前Servlet是：<a href="http://localhost:8080/项目名/servlet/AServlet，" target="_blank" rel="noopener">http://localhost:8080/项目名/servlet/AServlet，</a>　就是<a href="http://localhost:8080/项目名/servlet/BServlet" target="_blank" rel="noopener">http://localhost:8080/项目名/servlet/BServlet</a></p>
+</li>
+</ul>
+<h5 id="重定向路径（客户端路径"><a href="#重定向路径（客户端路径" class="headerlink" title="　　重定向路径（客户端路径"></a>　　<strong>重定向路径（客户端路径</strong></h5><ul>
+<li>以“/”开头：相对当前主机，例如：<a href="http://localhost:8080/，" target="_blank" rel="noopener">http://localhost:8080/，</a>　所以需要自己手动添加项目名，例如；response.sendRedirect(“/day10_1/Bservlet”);</li>
+</ul>
+<p>　　<strong>页面中超链接和表单路径</strong></p>
+<ul>
+<li>与重定向相同，都是客户端路径！需要添加项目名</li>
+</ul>
+<p>​    <form action="/day10_1/AServlet"></form></p>
+<p>​    <a href="/day10_/AServlet"></a></p>
+<p>​    <a href="AServlet">，如果不以“/”开头，那么相对当前页面所在路径。如果是http://localhost:8080/day10_1/html/form.html。　即：http://localhost:8080/day10_1/html/ASevlet</a></p>
+<ul>
+<li><p>建立使用以“/”开头的路径，即绝对路径！</p>
+</li>
+<li><p>　<strong>ServletContext获取资源路径</strong></p>
+</li>
+</ul>
+<p>　　　　 相对当前项目目录，即当然index.jsp所在目录</p>
+<ul>
+<li><strong>ClassLoader获取资源路径</strong></li>
+</ul>
+<p>　　　　 相对classes目录</p>
+<p>　　* <strong>Class获取资源路径</strong></p>
+<p>　　　　 以“/”开头相对classes目录</p>
+<p>　　　　 不以“/”开头相对当前.class文件所在目录。</p>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/09/10/Request与Response/">http://cxqiang.gitee.io/blog/2019/09/10/Request与Response/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/Web核心技术/">Web核心技术</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/09/10/过滤器Filter/" class="pre">过滤器Filter</a><a href="/blog/2019/09/10/Cookie与Session/" class="next">Cookie与Session</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器处理请求的流程"><span class="toc-text">服务器处理请求的流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#response：其类型为HttpServletResponse"><span class="toc-text">response：其类型为HttpServletResponse</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#request-–-gt-封装了客户端所有的请求数据！"><span class="toc-text">request –&gt; 封装了客户端所有的请求数据！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取请求URL"><span class="toc-text">获取请求URL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求转发和请求包含"><span class="toc-text">请求转发和请求包含</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request域"><span class="toc-text">request域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码"><span class="toc-text">编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-text">路径</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#重定向路径（客户端路径"><span class="toc-text">　　重定向路径（客户端路径</span></a></li></ol></li></ol></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/JDBC/">JDBC</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/监听器Listener/">监听器Listener</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/过滤器Filter/">过滤器Filter</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Request与Response/">Request与Response</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Cookie与Session/">Cookie与Session</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Servlet/">Servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Web基础/">Web基础</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/原子性和CAS算法/">原子性和CAS算法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/volatile/">volatile</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/锁的优化与注意事项/">锁的优化与注意事项</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/容器/" style="font-size: 15px;">容器</a> <a href="/blog/tags/NIO/" style="font-size: 15px;">NIO</a> <a href="/blog/tags/IO/" style="font-size: 15px;">IO</a> <a href="/blog/tags/并发/" style="font-size: 15px;">并发</a> <a href="/blog/tags/Web核心技术/" style="font-size: 15px;">Web核心技术</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/字符串/" style="font-size: 15px;">字符串</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/Java高级/" style="font-size: 15px;">Java高级</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

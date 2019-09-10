@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="Xiaoqiang's Blog##,如：Charles·Zheng's blog."><meta name="keywords" content="个人博客, java, 后端"><link rel="stylesheet" type="text/css" href="//fonts.loli.net/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.0.4"><link rel="stylesheet" type="text/css" href="/blog/css/highlight.css?v=2.0.4"><link rel="Shortcut Icon" href="/blog/favicon.ico"><link rel="bookmark" href="/blog/favicon.ico"><link rel="apple-touch-icon" href="/blog/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/blog/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/blog/atom.xml"><title>Web基础 | 陌染殇雪</title></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Web基础</h1><a id="logo" href="/blog/.">陌染殇雪</a><p class="description">命运不会亏待正在努力变好的你.</p></div><div id="nav-menu"><a href="/blog/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/blog/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/blog/about/"><i class="fa fa-user"> 关于</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="搜索"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Web基础</h1><div class="post-meta"><a href="/blog/2019/09/10/Web基础/#comments" class="comment-count"></a><p><span class="date">Sep 10, 2019</span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h4 id="1-常见软件系统体系结构-B-S、C-S"><a href="#1-常见软件系统体系结构-B-S、C-S" class="headerlink" title="1        常见软件系统体系结构**B/S、C/S**"></a><strong>1</strong>        <strong>常见软件系统体系结构**</strong>B/S<strong><strong>、</strong></strong>C/S**</h4><ul>
+<li><p><strong>C/S   客户端服务器</strong></p>
+</li>
+<li><p><strong>BS即 浏览器服务器</strong></p>
+</li>
+</ul>
+<h4 id="2-Web资源"><a href="#2-Web资源" class="headerlink" title="2    Web资源"></a><strong>2    Web资源</strong></h4><ul>
+<li><p><strong>静态资源：html</strong></p>
+</li>
+<li><p><strong>动态资源：</strong>JSP/Servlet 先转变为静态资源</p>
+</li>
+</ul>
+<h4 id="3-访问Web资源"><a href="#3-访问Web资源" class="headerlink" title="3    访问Web资源"></a><strong>3</strong>    访问Web资源</h4><p>​    打开浏览器，输入URL：</p>
+<p>​    协议名://域名:端口/路径，   <a href="http://www.baidu.com:80/index.heml" target="_blank" rel="noopener">http://www.baidu.com:80/index.heml</a></p>
+<p>​    域名对应 一个IP地址 对应个服务器</p>
+<h4 id="4-Web服务器"><a href="#4-Web服务器" class="headerlink" title="4　Web服务器"></a><strong>4</strong>　<strong>Web</strong>服务器</h4><p>​    <strong>Web服务器的作用是接收客户端的请求，给客户端作出响应。</strong></p>
+<p>对于JavaWeb程序而已，还需要有<strong>JSP/Servlet容器</strong>，JSP/Servlet容器的基本功能是把动态资源转换成静态资源，当然JSP/Servlet容器不只这些功能，我们会在后面一点一点学习。</p>
+<p>我们需要使用的是Web服务器和JSP/Servlet容器，通常这两者会集于一身。下面是对JavaWeb服务器：</p>
+<ul>
+<li><p>Tomcat（Apache）：当前应用最广的JavaWeb服务器；</p>
+</li>
+<li><p>JBoss（Redhat红帽）：支持JavaEE，应用比较广；EJB容器</p>
+</li>
+<li><p>GlassFish（Orcale）：Oracle开发JavaWeb服务器，应用不是很广；</p>
+</li>
+<li><p>Resin（Caucho）：支持JavaEE，应用越来越广；</p>
+</li>
+<li><p>Weblogic（Orcale）：要钱的！支持JavaEE，适合大型项目；</p>
+</li>
+<li><p>Websphere（IBM）：要钱的！支持JavaEE，适合大型项目；</p>
+</li>
+</ul>
+<h3 id="5-tomcat目录结构"><a href="#5-tomcat目录结构" class="headerlink" title="5. tomcat目录结构"></a><strong>5. tomcat目录结构</strong></h3><ul>
+<li><p>bin：二进制可执行文件，例如startup.bat和shutdown.bat</p>
+</li>
+<li><p>conf：配置文件，例如：server.xml、context.xml、web.xml、tomcatusers.xml</p>
+</li>
+<li><p>lib：tomcat所需jar包</p>
+</li>
+<li><p>logs：日志文件</p>
+</li>
+<li><p>temp：存放tomcat运行时产生的临时文件，当tomcat关闭后，这个目录中的文件可以删除</p>
+</li>
+<li><p>webapps：这个目录下的每个文件夹对应一个JavaWeb应用程序</p>
+</li>
+<li><p>work：webapps下的应用程序在运行时会自动生成文件，就在work目录下。work目录删除了也没问题，但再次运行应用程序还要再生成work目录和文件</p>
+</li>
+</ul>
+<h4 id="6：http协议："><a href="#6：http协议：" class="headerlink" title="6：http协议："></a><strong>6：http协议：</strong></h4><p>就是 客户端和服务器的协议，双方通信的协议</p>
+<p><strong>请求协议</strong>：客户端</p>
+<p>格式：</p>
+<p>​    请求首行</p>
+<p>​    请求头信息</p>
+<p>​    空行</p>
+<p>​    请求体</p>
+<p>请求方法有许多中，其中最常见的是get和post请求</p>
+<ul>
+<li><p>GET请求：没有请求体</p>
+</li>
+<li><p>POST请求：一般是配合表单的提交使用 method=“post”：</p>
+</li>
+</ul>
+<p><strong>响应协议</strong>： 服务器</p>
+<p>​    格式：</p>
+<p>​    响应首行；</p>
+<p>​    响应头信息；</p>
+<p>​    空行；</p>
+<p>​    响应体。</p>
+<h4 id="常见请求头"><a href="#常见请求头" class="headerlink" title="常见请求头"></a><strong>常见请求头</strong></h4><ul>
+<li><p><strong>Host</strong>：请求的服务器主机名</p>
+</li>
+<li><p><strong>User-Agent</strong>：客户端浏览器与操作系统相关信息</p>
+</li>
+<li><p><strong>Accept-Encoding</strong>：客户端支持的数据压缩格式</p>
+</li>
+<li><p><strong>Connection</strong>：客户端支持的连接方式</p>
+</li>
+<li><p><strong>Cookie</strong>：客户端发送给服务器的“小甜点”，它服务器寄存在客户端的。如果当前访问的服务器没有在客户端寄存东西，那么就不会存在它！</p>
+</li>
+<li><p><strong>Content-Length</strong>：请求体的长度</p>
+</li>
+<li><p><strong>Referer</strong>：当前发出请求的地址，例如在浏览器地址栏直接访问服务器，那么没有这个请求头。如果是在<a href="http://www.baidu.com页面上点击链接访问的服务器，那么这个头的值就是www.baidu.com" target="_blank" rel="noopener">www.baidu.com页面上点击链接访问的服务器，那么这个头的值就是www.baidu.com</a></p>
+</li>
+</ul>
+<p>​        &gt; 作用1：统计来源</p>
+<p>​        &gt; 作用2：防盗链</p>
+<ul>
+<li><strong>Content-Type</strong>：如果是POST请求，会有这个头，默认值为application/x-www-form-urlencoded，表示请求体内容使用url编码。</li>
+</ul>
+<h4 id="响应码："><a href="#响应码：" class="headerlink" title="响应码："></a>响应码：</h4><ul>
+<li><p><strong>200</strong>：请求成功，浏览器会把响应体内容（通常是html）显示在浏览器中；</p>
+</li>
+<li><p><strong>404</strong>：请求的资源没有找到，说明客户端错误的请求了不存在的资源；</p>
+</li>
+<li><p>500：请求资源找到了，但<strong>服务器内部出现了错误；</strong></p>
+</li>
+<li><p><strong>302</strong>：重定向，当响应码为302时，表示服务器要求浏览器重新再发一个请求，服务器会发送一个                                              响应头Location，它指定了新请求的URL地址</p>
+</li>
+<li><p><strong>304</strong>：当用户第一次请求index.html时，服务器会添加一个名为Last-Modified响应头，这个头说明了index.html的最后修改时间，浏览器会把index.html内容，以及最后响应时间缓存下来。当用户第二     次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html</p>
+</li>
+</ul>
+<p><img src="D:/Program%20Files%20%28x86%29/youdao/xiaoqiang20000523@163.com/cfc55c793bc74ac1a0f9073a57d3831e/ip_image002.jpeg" alt="img"></p>
+</div><div class="post-copyright"><blockquote><p>原文作者: xiaoqiang</p><p>原文链接: <a href="http://cxqiang.gitee.io/blog/2019/09/10/Web基础/">http://cxqiang.gitee.io/blog/2019/09/10/Web基础/</a></p><p>版权声明: 转载请注明出处(必须保留原文作者署名原文链接)</p></blockquote></div><div class="tags"><a href="/blog/tags/Web核心技术/">Web核心技术</a></div><div class="post-share"><div class="social-share"><span>分享到:</span></div></div><div class="post-nav"><a href="/blog/2019/09/10/Servlet/" class="pre">Servlet</a><a href="/blog/2019/09/07/原子性和CAS算法/" class="next">原子性和CAS算法</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-常见软件系统体系结构-B-S、C-S"><span class="toc-text">1        常见软件系统体系结构**B/S、C/S**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Web资源"><span class="toc-text">2    Web资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-访问Web资源"><span class="toc-text">3    访问Web资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Web服务器"><span class="toc-text">4　Web服务器</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#5-tomcat目录结构"><span class="toc-text">5. tomcat目录结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6：http协议："><span class="toc-text">6：http协议：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见请求头"><span class="toc-text">常见请求头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#响应码："><span class="toc-text">响应码：</span></a></li></ol></li></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/JDBC/">JDBC</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/监听器Listener/">监听器Listener</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/过滤器Filter/">过滤器Filter</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Request与Response/">Request与Response</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Cookie与Session/">Cookie与Session</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Servlet/">Servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/10/Web基础/">Web基础</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/原子性和CAS算法/">原子性和CAS算法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/volatile/">volatile</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2019/09/07/锁的优化与注意事项/">锁的优化与注意事项</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/blog/tags/设计模式/" style="font-size: 15px;">设计模式</a> <a href="/blog/tags/容器/" style="font-size: 15px;">容器</a> <a href="/blog/tags/NIO/" style="font-size: 15px;">NIO</a> <a href="/blog/tags/IO/" style="font-size: 15px;">IO</a> <a href="/blog/tags/并发/" style="font-size: 15px;">并发</a> <a href="/blog/tags/Web核心技术/" style="font-size: 15px;">Web核心技术</a> <a href="/blog/tags/关键字/" style="font-size: 15px;">关键字</a> <a href="/blog/tags/常用类/" style="font-size: 15px;">常用类</a> <a href="/blog/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/blog/tags/Java基础/" style="font-size: 15px;">Java基础</a> <a href="/blog/tags/字符串/" style="font-size: 15px;">字符串</a> <a href="/blog/tags/面向对象/" style="font-size: 15px;">面向对象</a> <a href="/blog/tags/java基础/" style="font-size: 15px;">java基础</a> <a href="/blog/tags/Java高级/" style="font-size: 15px;">Java高级</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/blog/baidusitemap.xml">网站地图</a> |  <a href="/blog/atom.xml">订阅本站</a> |  <a href="/blog/about/">联系博主</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次，本站总访客数:<i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>人</p><p><span> Copyright &copy;<a href="/blog/." rel="nofollow">xiaoqiang.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/blog/js/search.json.js?v=2.0.4"></script><script type="text/javascript" src="/blog/js/toctotop.js?v=2.0.4" async></script><link rel="stylesheet" type="text/css" href="/blog/share/css/share.css"><script type="text/javascript" src="/blog/share/js/social-share.js" charset="utf-8"></script><script type="text/javascript" src="/blog/share/js/qrcode.js" charset="utf-8"></script></body></html>

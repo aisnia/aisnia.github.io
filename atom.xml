@@ -3,11 +3,11 @@
   <title>陌染殇雪</title>
   
   <subtitle>命运不会亏待正在努力变好的你.</subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://cxqiang.gitee.io/blog/"/>
+  <link href="https://aisnia.github.io/"/>
   <updated>2019-09-10T14:41:41.295Z</updated>
-  <id>http://cxqiang.gitee.io/blog/</id>
+  <id>https://aisnia.github.io/</id>
   
   <author>
     <name>xiaoqiang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>JDBC</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/JDBC/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/JDBC/</id>
+    <link href="https://aisnia.github.io/2019/09/10/JDBC/"/>
+    <id>https://aisnia.github.io/2019/09/10/JDBC/</id>
     <published>2019-09-10T14:38:05.000Z</published>
     <updated>2019-09-10T14:41:41.295Z</updated>
     
@@ -35,14 +35,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>监听器Listener</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/%E7%9B%91%E5%90%AC%E5%99%A8Listener/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/监听器Listener/</id>
+    <link href="https://aisnia.github.io/2019/09/10/%E7%9B%91%E5%90%AC%E5%99%A8Listener/"/>
+    <id>https://aisnia.github.io/2019/09/10/监听器Listener/</id>
     <published>2019-09-10T14:32:59.000Z</published>
     <updated>2019-09-10T14:37:25.322Z</updated>
     
@@ -58,14 +58,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>过滤器Filter</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/%E8%BF%87%E6%BB%A4%E5%99%A8Filter/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/过滤器Filter/</id>
+    <link href="https://aisnia.github.io/2019/09/10/%E8%BF%87%E6%BB%A4%E5%99%A8Filter/"/>
+    <id>https://aisnia.github.io/2019/09/10/过滤器Filter/</id>
     <published>2019-09-10T14:29:46.000Z</published>
     <updated>2019-09-10T14:32:42.910Z</updated>
     
@@ -81,14 +81,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>Request与Response</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/Request%E4%B8%8EResponse/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/Request与Response/</id>
+    <link href="https://aisnia.github.io/2019/09/10/Request%E4%B8%8EResponse/"/>
+    <id>https://aisnia.github.io/2019/09/10/Request与Response/</id>
     <published>2019-09-10T03:24:02.000Z</published>
     <updated>2019-09-10T14:28:52.171Z</updated>
     
@@ -104,14 +104,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>Cookie与Session</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/Cookie%E4%B8%8ESession/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/Cookie与Session/</id>
+    <link href="https://aisnia.github.io/2019/09/10/Cookie%E4%B8%8ESession/"/>
+    <id>https://aisnia.github.io/2019/09/10/Cookie与Session/</id>
     <published>2019-09-10T03:22:58.000Z</published>
     <updated>2019-09-10T14:22:39.387Z</updated>
     
@@ -128,14 +128,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>Servlet</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/Servlet/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/Servlet/</id>
+    <link href="https://aisnia.github.io/2019/09/10/Servlet/"/>
+    <id>https://aisnia.github.io/2019/09/10/Servlet/</id>
     <published>2019-09-10T02:30:25.000Z</published>
     <updated>2019-09-10T03:14:40.131Z</updated>
     
@@ -152,14 +152,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>Web基础</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/10/Web%E5%9F%BA%E7%A1%80/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/10/Web基础/</id>
+    <link href="https://aisnia.github.io/2019/09/10/Web%E5%9F%BA%E7%A1%80/"/>
+    <id>https://aisnia.github.io/2019/09/10/Web基础/</id>
     <published>2019-09-10T02:18:33.000Z</published>
     <updated>2019-09-10T02:30:13.839Z</updated>
     
@@ -175,14 +175,14 @@
     </summary>
     
     
-      <category term="Web核心技术" scheme="http://cxqiang.gitee.io/blog/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
+      <category term="Web核心技术" scheme="https://aisnia.github.io/tags/Web%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>原子性和CAS算法</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/%E5%8E%9F%E5%AD%90%E6%80%A7%E5%92%8CCAS%E7%AE%97%E6%B3%95/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/原子性和CAS算法/</id>
+    <link href="https://aisnia.github.io/2019/09/07/%E5%8E%9F%E5%AD%90%E6%80%A7%E5%92%8CCAS%E7%AE%97%E6%B3%95/"/>
+    <id>https://aisnia.github.io/2019/09/07/原子性和CAS算法/</id>
     <published>2019-09-07T07:23:41.000Z</published>
     <updated>2019-09-07T07:25:45.703Z</updated>
     
@@ -198,14 +198,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>volatile</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/volatile/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/volatile/</id>
+    <link href="https://aisnia.github.io/2019/09/07/volatile/"/>
+    <id>https://aisnia.github.io/2019/09/07/volatile/</id>
     <published>2019-09-07T07:22:18.000Z</published>
     <updated>2019-09-07T07:23:11.642Z</updated>
     
@@ -222,14 +222,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>锁的优化与注意事项</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/锁的优化与注意事项/</id>
+    <link href="https://aisnia.github.io/2019/09/07/%E9%94%81%E7%9A%84%E4%BC%98%E5%8C%96%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>https://aisnia.github.io/2019/09/07/锁的优化与注意事项/</id>
     <published>2019-09-07T07:07:17.000Z</published>
     <updated>2019-09-07T07:16:14.984Z</updated>
     
@@ -246,14 +246,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>fork/join框架</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/fork-join%E6%A1%86%E6%9E%B6/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/fork-join框架/</id>
+    <link href="https://aisnia.github.io/2019/09/07/fork-join%E6%A1%86%E6%9E%B6/"/>
+    <id>https://aisnia.github.io/2019/09/07/fork-join框架/</id>
     <published>2019-09-07T07:04:35.000Z</published>
     <updated>2019-09-07T07:06:20.765Z</updated>
     
@@ -269,14 +269,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>线程池</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/线程池/</id>
+    <link href="https://aisnia.github.io/2019/09/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>https://aisnia.github.io/2019/09/07/线程池/</id>
     <published>2019-09-07T06:51:00.000Z</published>
     <updated>2019-09-07T07:04:16.381Z</updated>
     
@@ -292,14 +292,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>LockSupport</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/LockSupport/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/LockSupport/</id>
+    <link href="https://aisnia.github.io/2019/09/07/LockSupport/"/>
+    <id>https://aisnia.github.io/2019/09/07/LockSupport/</id>
     <published>2019-09-07T06:49:38.000Z</published>
     <updated>2019-09-07T06:50:39.713Z</updated>
     
@@ -315,14 +315,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>CyclicBarrier循环栅栏</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/CyclicBarrier%E5%BE%AA%E7%8E%AF%E6%A0%85%E6%A0%8F/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/CyclicBarrier循环栅栏/</id>
+    <link href="https://aisnia.github.io/2019/09/07/CyclicBarrier%E5%BE%AA%E7%8E%AF%E6%A0%85%E6%A0%8F/"/>
+    <id>https://aisnia.github.io/2019/09/07/CyclicBarrier循环栅栏/</id>
     <published>2019-09-07T06:43:55.000Z</published>
     <updated>2019-09-07T07:04:36.968Z</updated>
     
@@ -338,14 +338,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>CountDownLatch闭锁</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/CountDownLatch%E9%97%AD%E9%94%81/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/CountDownLatch闭锁/</id>
+    <link href="https://aisnia.github.io/2019/09/07/CountDownLatch%E9%97%AD%E9%94%81/"/>
+    <id>https://aisnia.github.io/2019/09/07/CountDownLatch闭锁/</id>
     <published>2019-09-07T06:41:43.000Z</published>
     <updated>2019-09-07T06:43:16.569Z</updated>
     
@@ -361,14 +361,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>ReadWriterLock读写锁</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/ReadWriterLock%E8%AF%BB%E5%86%99%E9%94%81/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/ReadWriterLock读写锁/</id>
+    <link href="https://aisnia.github.io/2019/09/07/ReadWriterLock%E8%AF%BB%E5%86%99%E9%94%81/"/>
+    <id>https://aisnia.github.io/2019/09/07/ReadWriterLock读写锁/</id>
     <published>2019-09-07T06:38:23.000Z</published>
     <updated>2019-09-07T06:39:12.520Z</updated>
     
@@ -388,14 +388,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>信号量Semaphore</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/%E4%BF%A1%E5%8F%B7%E9%87%8FSemaphore/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/信号量Semaphore/</id>
+    <link href="https://aisnia.github.io/2019/09/07/%E4%BF%A1%E5%8F%B7%E9%87%8FSemaphore/"/>
+    <id>https://aisnia.github.io/2019/09/07/信号量Semaphore/</id>
     <published>2019-09-07T06:32:40.000Z</published>
     <updated>2019-09-07T06:37:18.754Z</updated>
     
@@ -414,14 +414,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>ReentrantLock重入锁</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/07/ReentrantLock%E9%87%8D%E5%85%A5%E9%94%81/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/07/ReentrantLock重入锁/</id>
+    <link href="https://aisnia.github.io/2019/09/07/ReentrantLock%E9%87%8D%E5%85%A5%E9%94%81/"/>
+    <id>https://aisnia.github.io/2019/09/07/ReentrantLock重入锁/</id>
     <published>2019-09-07T06:19:58.000Z</published>
     <updated>2019-09-07T06:32:51.225Z</updated>
     
@@ -437,14 +437,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>并发编程基础</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/06/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/06/并发编程基础/</id>
+    <link href="https://aisnia.github.io/2019/09/06/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"/>
+    <id>https://aisnia.github.io/2019/09/06/并发编程基础/</id>
     <published>2019-09-06T06:34:00.000Z</published>
     <updated>2019-09-07T07:23:03.953Z</updated>
     
@@ -460,14 +460,14 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>并发常见用语</title>
-    <link href="http://cxqiang.gitee.io/blog/2019/09/06/%E5%B9%B6%E5%8F%91%E5%B8%B8%E8%A7%81%E7%94%A8%E8%AF%AD/"/>
-    <id>http://cxqiang.gitee.io/blog/2019/09/06/并发常见用语/</id>
+    <link href="https://aisnia.github.io/2019/09/06/%E5%B9%B6%E5%8F%91%E5%B8%B8%E8%A7%81%E7%94%A8%E8%AF%AD/"/>
+    <id>https://aisnia.github.io/2019/09/06/并发常见用语/</id>
     <published>2019-09-06T06:20:51.000Z</published>
     <updated>2019-09-06T06:33:31.687Z</updated>
     
@@ -484,7 +484,7 @@
     </summary>
     
     
-      <category term="并发" scheme="http://cxqiang.gitee.io/blog/tags/%E5%B9%B6%E5%8F%91/"/>
+      <category term="并发" scheme="https://aisnia.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   
